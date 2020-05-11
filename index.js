@@ -1,4 +1,7 @@
 const tablebody = document.getElementById('tablebody');
+const Header = document.getElementById('header');
+const Process = document.getElementById('process');
+
 math.config({
 	number: 'number',
 });
@@ -12,6 +15,7 @@ seleccione el metodo a usar:
 5. metodo de la secante
 6. salir
 -----------------------------------------`;
+
 var Cs = 0,
 	i = 0,
 	ii = 0,
@@ -64,6 +68,15 @@ switch (op) {
 
 		Es = 0.5 * math.pow(10, 2 - Cs);
 		console.log(`Tolerencia = ${Es} %`);
+		let header2 = `
+		valor verdadero = ${Vv}
+		Xi = ${Xi}
+		Xn = ${Xn}
+		cant. de cifras significativas = ${Cs}
+		expresion: ${Ex}
+		Tolerencia = ${Es} %
+		`;
+		Header.innerText += header2;
 
 		do {
 			let scope = {
@@ -106,16 +119,29 @@ switch (op) {
 				: console.log(`
 			error aprox. = ${Ea} %`); //|Ea|
 
-			let tableBody = `
+			let tableBody2 = `
 			<tr>
 			<td>${i}</td>
-			<td>${Xr}</td>
-			<td>${Ev}</td>
-			<td>${Ea}</td>
+			<td>${Xr})}</td>
+			<td>${Ev})}</td>
+			<td>${Ea})}</td>
 			</tr>`;
-			tablebody.innerHTML += tableBody;
+			tablebody.innerHTML += tableBody2;
 
 			console.log('-----------------------------------------');
+
+			let process2 = `
+			-----------------------------------------
+			${i}) iteracion [${Xi}, ${Xn}]
+			Xr = ${Xr}
+			f(xi) = f(${Xi}) = ${fxi}
+			f(xn) = f(${Xn}) = ${fxn}
+			f(xr) = f(${Xr}) = ${fxr}
+			
+			error verdadero = ${Ev} %
+			error aprox. = ${Ea} %
+			-----------------------------------------`;
+			Process.innerText += process2;
 
 			I = Xr;
 			ff = fxi * fxr;
@@ -146,6 +172,16 @@ switch (op) {
 
 		Es = 0.5 * math.pow(10, 2 - Cs);
 		console.log(`Tolerencia = ${Es} %`);
+
+		let header = `
+		valor verdadero = ${Vv}
+		Xi = ${Xi}
+		Xn = ${Xn}
+		cant. de cifras significativas = ${Cs}
+		expresion: ${Ex}
+		Tolerencia = ${Es} %
+		`;
+		Header.innerText += header;
 
 		do {
 			let scope = {
@@ -197,6 +233,19 @@ switch (op) {
 			</tr>`;
 			tablebody.innerHTML += tableBody;
 			console.log('-----------------------------------------');
+
+			let process = `
+			-----------------------------------------
+			${i}) iteracion [${Xi}, ${Xn}]
+			Xr = ${Xr}
+			f(xi) = f(${Xi}) = ${fxi}
+			f(xn) = f(${Xn}) = ${fxn}
+			f(xr) = f(${Xr}) = ${fxr}
+			
+			error verdadero = ${Ev} %
+			error aprox. = ${Ea} %
+			-----------------------------------------`;
+			Process.innerText += process;
 
 			I = Xr;
 			ff = fxi * fxr;

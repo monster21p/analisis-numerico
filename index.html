@@ -9,30 +9,52 @@
 			rel="stylesheet"
 			href="https://bootswatch.com/4/cosmo/bootstrap.min.css"
 		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
-		<div class="row">
-			<div class="col-md-8 offset-md-2">
-				<div class="card">
-					<div class="card-body">
-						<form>
-							<table class="table table-bordered">
-								<thead>
-									<tr>
-										<th scope="col">Iteración</th>
-										<th scope="col">Xr</th>
-										<th scope="col">Ev</th>
-										<th scope="col">|Ea|</th>
-									</tr>
-								</thead>
-								<tbody id="tablebody"></tbody>
-							</table>
-						</form>
+		<div class="container-fluid bg-secondary">
+			<div class="row pt-3">
+				<div class="col-sm-12 col-md-4">
+					<div class="card">
+						<div class="card-header">
+							<section id="header"></section>
+						</div>
+						<div class="card-body">
+							<section id="process"></section>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-8">
+					<div class="card">
+						<div class="card-body">
+							<form>
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th scope="col">Iteración</th>
+											<th scope="col">Xr</th>
+											<th scope="col">Ev</th>
+											<th scope="col">|Ea|</th>
+										</tr>
+									</thead>
+									<tbody id="tablebody"></tbody>
+								</table>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<style>
+			* {
+				font-family: 'Baloo Da 2';
+				font-size: large;
+			}
+		</style>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/7.0.0/math.min.js"></script>
-		<script src="./index.js"></script>
+		<script type="module" src="./index.js"></script>
 	</body>
 </html>
