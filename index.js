@@ -122,9 +122,9 @@ switch (op) {
 			let tableBody2 = `
 			<tr>
 			<td>${i}</td>
-			<td>${Xr})}</td>
-			<td>${Ev})}</td>
-			<td>${Ea})}</td>
+			<td>${Xr}</td>
+			<td>${Ev}</td>
+			<td>${Ea}</td>
 			</tr>`;
 			tablebody.innerHTML += tableBody2;
 
